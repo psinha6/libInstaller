@@ -1,0 +1,34 @@
+<div class="installer">
+  <div class="data">
+    <div class="left-box box container">
+      <div *ngFor="let lib of leftLibs" class="left-box-item item" (click)="pickLib(lib)" [ngClass]="{'picked': getSelcteddLibClass(lib)}">
+        {{lib.name}}
+      </div>
+    </div>
+
+    <div class="container-buttons container">
+      <button id="toRight" class="button-arrow" (click)="toRight()">
+            <div class="icon left-to-right-arrow"></div>
+          </button>
+      <button id="toLeft" class="button-arrow" (click)="toLeft()">
+            <div class="icon right-to-left-arrow"></div>
+          </button>
+    </div>
+
+    <div class="right-box box container">
+      <div *ngFor="let lib of rightLibs" class="right-box-item item" (click)="pickLib(lib)"
+        [ngClass]="{'picked': getSelcteddLibClass(lib)}">
+        {{lib.name}}
+      </div>
+    </div>
+  </div>
+
+  <div class="install-button">
+    <button id="install" (click)="installLibs()"> Install </button>
+  </div>
+</div>
+
+
+
+<!-- //Ashish -->
+<app-child [details]="myEvent" (callFn)="callMyFunction()"></app-child>
